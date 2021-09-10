@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
       model: Product,
       attributes: ['id', 'category_name', 'product_name', 'price', 'stock'],
     }
-  ]
+    ]
   })
-  .then(dbTagData => res.json(dbTagData))
+    .then(dbTagData => res.json(dbTagData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -26,7 +26,8 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     include: [
-      { model: Product,
+      {
+        model: Product,
         attributes: ['id', 'category_name', 'product_name', 'price', 'stock'],
       },
     ]
@@ -49,30 +50,30 @@ router.post('/', (req, res) => {
   Tag.create({
     tag_name: req.body.tag_name
   })
-  .then(dbTagData => res.json(dbTagData))
-  .catch(err => {
-    console.log(err)
-    res.status(500).json(err);
-  })
+    .then(dbTagData => res.json(dbTagData))
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err);
+    })
 });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update(req.body, {
     where: {
-        id: req.params.id
+      id: req.params.id
     }
   })
     .then(dbTagData => {
-        if (!dbTagData[0]) {
-            res.status(404).json({ message: 'No product found'});
-            return;
-        }res.json(dbTagData);
-  })
+      if (!dbTagData[0]) {
+        res.status(404).json({ message: 'No product found' });
+        return;
+      } res.json(dbTagData);
+    })
     .catch(err => {
-        //console.log(err); 
-        res.status(500).json(err);
-  });
+      //console.log(err); 
+      res.status(500).json(err);
+    });
 });
 
 router.delete('/:id', (req, res) => {
@@ -82,17 +83,17 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbTagData => {
-    if (!dbTagData) {
-      res.status(404).json({ message: 'No post found with this id' });
-      return;
-    }
-    res.json(dbTagData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then(dbTagData => {
+      if (!dbTagData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbTagData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 
 });
 
