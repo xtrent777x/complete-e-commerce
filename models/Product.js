@@ -1,3 +1,4 @@
+// Just tech new module used as guide with models section
 // import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
 // import our database connection from config.js

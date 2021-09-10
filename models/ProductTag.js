@@ -1,3 +1,4 @@
+// Just tech new module used as guide with models section
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
