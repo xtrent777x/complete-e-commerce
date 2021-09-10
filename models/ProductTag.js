@@ -8,7 +8,22 @@ ProductTag.init(
   {
     // define columns
     // id - integer - doesnt allow null - set primary - uses auto increment - 
-    // product id - integer -refrence product model - tag id - integer - refrence tog id
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    // product id - integer -refrence product model - 
+    product_id: {
+      type: DataTypes.INTEGER,
+      references: { model: 'product', key: 'id' }
+    },
+    //tag id - integer - refrence tog id
+    tag_id: {
+      type: DataTypes.INTEGER,
+      references: { model: 'tag', key: 'id' }
+    }
   },
   {
     sequelize,

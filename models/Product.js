@@ -19,7 +19,7 @@ Product.init(
     },
     //(product name) - string - doesnt allow null -decimal -validate null -
     product_name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
       allowNull: false
     },
     // Price -decimal -validate null -
@@ -33,7 +33,7 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 10,
-      validate { isNumeric: true}
+      validate: { isNumeric: true}
     },
     // catagory id - integer - refrence catagor model id
     category_id: {
