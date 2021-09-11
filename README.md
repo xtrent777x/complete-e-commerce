@@ -26,5 +26,5 @@ Use is for e-commerce sites to view inventory add products categories and such a
 https://drive.google.com/file/d/1IX9BC5b-L7wKLiVRxqC_654eaU7uvvJJ/view
 
 ### Contact
-xtrent777x@gmail.com
-https://github.com/xtrent777x
+Email: xtrent777x@gmail.com
+GITHUB: https://github.com/xtrent777x
